@@ -10,6 +10,9 @@ data$dt <- strptime(paste(data$Date, data$Time), "%d/%m/%Y %H:%M:%S")
 data$Date <- as.Date(data$Date, "%d/%m/%Y")
 data_subset <- subset(data, Date >= as.Date("2007-02-01") & Date <= as.Date("2007-02-02"))
 
+# Create figure
+plot(data_subset$dt, data_subset$Global_active_power, type = "l", xlab = "", ylab = "Global Active Power (kilowatts)")
+
 
 #Create png file
 png(filename = "plot2.png", width = 480, height = 480, units = "px", bg = "white")
